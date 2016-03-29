@@ -22,8 +22,17 @@
 // SOFTWARE.
 // --------------------------------------------------------------------------------
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@protocol SDStatusBarOverrider <NSObject>
+
+@property (copy, nonatomic) NSString *timeString;
+@property (copy, nonatomic) NSString* carrierName;
+
+@property (assign, nonatomic) BOOL bluetoothEnabled;
+@property (assign, nonatomic) BOOL bluetoothConnected;
+
+- (void)enableOverrides;
+- (void)disableOverrides;
 
 @end

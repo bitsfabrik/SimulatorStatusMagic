@@ -22,8 +22,9 @@
 // SOFTWARE.
 // --------------------------------------------------------------------------------
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "SDStatusBarOverrider.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface SDStatusBarOverriderPre8_3 : NSObject <SDStatusBarOverrider>
 
 @end
