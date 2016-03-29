@@ -164,7 +164,12 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 {
   static dispatch_once_t predicate = 0;
   __strong static id sharedObject = nil;
-  dispatch_once(&predicate, ^{ sharedObject = [[self alloc] init]; });
+  dispatch_once(&predicate, ^{
+    sharedObject = [[self alloc] init];
+    SDStatusBarManager *sharedManager = sharedObject;
+    sharedManager.carrierName = @"bitsfabrik";
+    sharedManager.timeString = @"11:20";
+  });
   return sharedObject;
 }
 
